@@ -19,7 +19,7 @@ $(document).ready(function(){
             $("nav ul li a").hover(function(){
                 $(this).css("background", "#fff");
             });
-            $(".nav-last-link").css({"margin-right":"275px"});
+            $(".nav-last-link").css({"margin-right":"195px"});
             $("#main").css({"margin-top":"55px"});
         }
     });
