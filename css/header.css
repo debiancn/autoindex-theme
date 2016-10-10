@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    min-width: 1300px;
 }
 header {
     height: 60px;
@@ -13,9 +14,9 @@ header a {
     font-size: 2em;
 }
 form {
-    float: right;
+    float:right;
     margin-right:200px;
-    margin-top:30px;
+    margin-top: 30px;
 }
 #search {
     border-radius: 5px;
@@ -99,10 +100,8 @@ h1 span:hover {
 
 }
 .content-left {
-    position: absolute;
-    top: 110px;
-    right: 0;
-    margin: 25px 130px 0 0;
+    float: right;
+    margin: 0 140px 0 0;
     width: 300px;
 }
 .content-left ul {

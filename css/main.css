@@ -15,7 +15,7 @@ pre {
     overflow: hidden;
     background-color: #fff;
     border-radius: 10px;
-    margin-left: 100px;
+    margin-left: 120px;
     margin-right: 100px;
     min-height: 400px;
 }
@@ -52,11 +52,11 @@ a[href$=".bz2"]:before {
 }
 
 a[href$=".gz"]:before {
-   background: url(../images/icons/gz.png);
+   background: url(../images/icons/gzip.png);
 }
 
 a[href$=".tar.gz"]:before {
-   background: url(../images/icons/tar.gz.png);
+   background: url(../images/icons/tar.gzip.png);
 }
 
 /* Vagrant */
