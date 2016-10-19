@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header" style="overflow: hidden">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#debiancn-autoindex-navbar-collapse-1" aria-expanded="false">
@@ -8,14 +8,35 @@
         <span class="icon-bar"></span>
       </button>
       <div style="float: left; width: 0px; opacity: 0.2;"><a class="navbar-brand" href="#"><img style="margin-top: -30px;" src="/static/img/debian-logo.svg" alt=""/></a></div>
-      <a class="navbar-brand" href="#">Debian 中文软件仓库</a>
+      <a class="navbar-brand" href="#">Debian 中文社区软件源</a>
     </div> <!-- navbar-header -->
 
     <!-- Collect nav links / forms / other contents for toggling -->
     <div class="collapse navbar-collapse" id="debiancn-autoindex-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">软件源</a><span class="sr-only">（当前）</span></li>
+        <li><a href="http://www.debiancn.org">首页</a></li>
+        <li class="active"><a href="#">仓库</a><span class="sr-only">（当前）</span></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">站点<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://forums.debiancn.org">论坛</a></li>
+            <li><a href="http://wiki.debiancn.org">Wiki</a></li>
+            <li><a href="https://wiki.debian.org/zh_CN/FrontPage">官方Wiki</a></li>
+          </ul>
+        </li>
+        <li><a href="#">关于</a></li>
       </ul>
+      <!--
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="#">捐助我们</a></li>
+      </ul>
+      -->
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="软件包搜索..."/>
+        </div>
+        <button type="submit" class="btn btn-default">搜索</button>
+      </form>
     </div> <!-- collapse navbar-collapse -->
   </div> <!-- container-fluid -->
 </nav>

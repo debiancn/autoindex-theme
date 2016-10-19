@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<p>This is footer.</p>
+<footer class="navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+	  <p class="text-muted">Debian 是 Software in the Public Interest, Inc. 的注册商标。<span style="float: right;">© 2016 - <a href="http://www.debiancn.org">Debian 中文社区</a></span></p>
+  </div>
+</footer>
