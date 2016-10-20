@@ -36,7 +36,7 @@
 	      <td>
 	        <a>
 	          <xsl:attribute name="href">
-		    <xsl:value-of select="."/>
+		    <xsl:value-of select="."/>/
 	 	  </xsl:attribute>
                   <div class="td-full td-full-dir">
                     <xsl:value-of select="."/>
