@@ -1,6 +1,22 @@
-.footer {
-    position: fixed;
-    bottom: 0px;
+.container {
+    margin-top: 4em;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    padding-top: 1em;
+    height: 100%;
+}
+
+.bottom-rule {
+    text-align: center;
+}
+
+.td-full {
+    width: 100%;
+    height: 100%;
+    font-family: monospace;
 }
 
 table td {
@@ -15,7 +31,7 @@ table td {
 }
 
 td.shrink {
-    text-align: right;
+/*    text-align: right; */
 }
 
 
@@ -31,4 +47,13 @@ table {
     thead th:nth-of-type(2) {
         display: none;
     }
+}
+
+#debiancn-side-linklist {
+    list-style: none;
+    font-size: 16px;
+}
+
+.navbar-header {
+    overflow: hidden;
 }

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<footer class="navbar-default navbar-fixed-bottom">
+<footer class="navbar-default">
   <div class="container-fluid">
-	  <p class="text-muted">Debian 是 Software in the Public Interest, Inc. 的注册商标。<span style="float: right;">© 2016 - <a href="http://www.debiancn.org">Debian 中文社区</a></span></p>
+    <div class="row bottom-rule">
+          <p>© 2016 - <a href="http://www.debiancn.org">Debian 中文社区</a></p>
+	  <p>服务器由<a href="https://www.ucloud.cn/"><img src="/static/img/u.png"/></a>赞助</p>
+          <p class="text-muted">Debian 是 Software in the Public Interest, Inc. 的注册商标。</p>
+    </div>
   </div>
 </footer>

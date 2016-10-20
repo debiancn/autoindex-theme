@@ -20,27 +20,29 @@
           <h3>文件列表</h3>
           <hr/>
           <h5 id="debiancn-current-pathname"></h5>
-          <table class="table">
+          <table class="table table-striped">
             <thead>
               <th>名称</th>
               <th>修改时间</th>
               <th class="shrink">大小</th>
             </thead>
             <tr id="autoindex-upper-dir">
-              <td><a href="..">../</a></td>
+              <td><a href=".."><div class="td-full td-full-dir">../</div></a></td>
               <td></td>
               <td class="shrink"></td>
             </tr>
           <xsl:for-each select="list/directory">
             <tr>
-              <td>
-                <a>
-                  <xsl:attribute name="href">
+	      <td>
+	        <a>
+	          <xsl:attribute name="href">
+		    <xsl:value-of select="."/>
+	 	  </xsl:attribute>
+                  <div class="td-full td-full-dir">
                     <xsl:value-of select="."/>
-                  </xsl:attribute>
-                  <xsl:value-of select="."/>
+		  </div>
                 </a>
-              </td>
+	      </td>
               <td class="debiancn-table-time"><xsl:value-of select="./@mtime"/></td>
               <td class="shrink"></td>
             </tr>
@@ -52,7 +54,7 @@
                   <xsl:attribute name="href">
                     <xsl:value-of select="."/>
                   </xsl:attribute>
-                  <xsl:value-of select="."/>
+                  <div class="td-full td-full-file"><xsl:value-of select="."/></div>
                 </a>
               </td>
               <td class="debiancn-table-time"><xsl:value-of select="./@mtime"/></td>
@@ -61,15 +63,16 @@
           </xsl:for-each>
           </table>
         </div> <!-- .col table -->
-        <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="col-md-4 col-sm-12 col-xs-12">
           <h3>常用链接</h3>
             <hr/>
-            <ul style="list-style: none; font-size:16px">
+            <ul id="debiancn-side-linklist">
               <li><a href="https://github.com/debiancn/repo">社区源使用方法</a></li>
               <li><a href="https://github.com/debiancn/repo/issues">Issue tracker</a></li>
             </ul>
         </div> <!-- .col links -->
-        <div class="col-md-4 col-sm-6 col-xs-12">
+
+        <div class="col-md-4 col-sm-12 col-xs-12">
           <h3>简介</h3>
           <hr/>
           <p>Debian 中文社区软件仓库是由 Debian 中文社区维护的软件仓库，主要收录了一些 Debian 官方软件仓库中由于种种原因未收录的软件包，可以作为对 Debian 官方软件仓库的一个补充。</p>
