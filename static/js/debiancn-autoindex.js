@@ -2,6 +2,11 @@ function debiancn_getPathName() {
     return window.location.pathname;
 }
 
+function searchPackageExternal() {
+    var package_name = $("#package-search-input")[0].value.toString();
+    window.location.href = "https://github.com/debiancn/repo/search?utf8=✓&q=" + package_name;
+}
+
 $(document).ready(function(){
     $("#debiancn-current-pathname").text("您的位置："+debiancn_getPathName());
     var timelist = $(".debiancn-table-time");

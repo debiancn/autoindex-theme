@@ -6,6 +6,7 @@
         <span class="sr-only">Toggle Navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
       <div style="float: left; width: 0px; opacity: 0.2;"><a class="navbar-brand" href="#"><img style="margin-top: -30px;" src="/static/img/debian-logo.svg" alt=""/></a></div>
       <a class="navbar-brand" href="/">Debian 中文社区软件源</a>
@@ -15,7 +16,7 @@
     <div class="collapse navbar-collapse" id="debiancn-autoindex-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="http://www.debiancn.org">首页</a></li>
-        <li class="active"><a href="#">仓库</a><span class="sr-only">（当前）</span></li>
+        <li class="active"><a href="/">仓库</a><span class="sr-only">（当前）</span></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">站点<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -24,7 +25,7 @@
             <li><a href="https://wiki.debian.org/zh_CN/FrontPage">官方Wiki</a></li>
           </ul>
         </li>
-        <li><a href="#">关于</a></li>
+        <li><a href="http://www.debiancn.org/contact.html">关于</a></li>
       </ul>
       <!--
       <ul class="nav navbar-nav navbar-left">
@@ -33,9 +34,9 @@
       -->
       <form class="navbar-form navbar-right">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="软件包搜索..."/>
+          <input id="package-search-input" type="text" class="form-control" placeholder="软件包搜索..."/>
         </div>
-        <button type="submit" class="btn btn-default">搜索</button>
+        <button type="submit" class="btn btn-default" onclick="searchPackageExternal(); return false;">搜索</button>
       </form>
     </div> <!-- collapse navbar-collapse -->
   </div> <!-- container-fluid -->
