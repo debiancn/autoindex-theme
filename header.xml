@@ -21,6 +21,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">站点<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="http://forums.debiancn.org">论坛</a></li>
+            <li><a href="http://irc.debiancn.org">IRC在线聊天</a></li>
             <li><a href="http://wiki.debiancn.org">Wiki</a></li>
             <li><a href="https://wiki.debian.org/zh_CN/FrontPage">官方Wiki</a></li>
           </ul>
