@@ -2,3 +2,33 @@
     position: fixed;
     bottom: 0px;
 }
+
+table td {
+    word-break: break-all;
+    word-wrap: break-word;
+    width: 33%;
+}
+
+.shrink {
+    width: 15%;
+    white-space: nowrap;
+}
+
+td.shrink {
+    text-align: right;
+}
+
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+@media screen and (max-width:480px) {
+    td:nth-of-type(2) {
+        display: none;
+    }
+    thead th:nth-of-type(2) {
+        display: none;
+    }
+}
