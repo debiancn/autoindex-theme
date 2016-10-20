@@ -10,6 +10,10 @@ footer {
     height: 100%;
 }
 
+footer p {
+    margin: 0.1em;
+}
+
 .bottom-rule {
     text-align: center;
 }
