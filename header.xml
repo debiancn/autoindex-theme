@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
       </button>
       <div style="float: left; width: 0px; opacity: 0.2;"><a class="navbar-brand" href="#"><img style="margin-top: -30px;" src="/static/img/debian-logo.svg" alt=""/></a></div>
-      <a class="navbar-brand" href="#">Debian 中文社区软件源</a>
+      <a class="navbar-brand" href="/">Debian 中文社区软件源</a>
     </div> <!-- navbar-header -->
 
     <!-- Collect nav links / forms / other contents for toggling -->

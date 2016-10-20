@@ -4,7 +4,7 @@
 
 <xsl:template match="/">
   <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
-  <html xmlns="http://www.w3.org/1999/xhtml">
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
     <head>
       <meta charset="UTF-8"/>
       <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
