@@ -17,7 +17,7 @@ pre {
     border-radius: 10px;
     margin-left: 120px;
     margin-right: 100px;
-    min-height: 400px;
+    min-height: calc(100vh - 228px - 75px - 55px - 60px);
 }
 /* ***** */
 /* Icons */
