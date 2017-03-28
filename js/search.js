@@ -13,14 +13,14 @@ function windowLoaded(){
     // search result
     var $result = $('#searchForm .searchResult');
     var ajax = {
-	'codename':'./info/codename.json'
+	'codename':'/info/codename.json'
     };
     $.get( ajax.codename, ajaxFn );
     function ajaxFn( data ){
 	ajax.codename = data;
 	for( var i in data ){
 	    (function( i ){
-		ajax[i] = './info/' + i + '.json';
+		ajax[i] = '/info/' + i + '.json';
 		$.get( ajax[i], function( data ){
 		    ajax[i] = data;
 		    console.log( data , i);
