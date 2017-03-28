@@ -13,7 +13,7 @@ function windowLoaded(){
     // base url
 //    var baseUrl = './info/';
     //    var baseUrl = 'http://repo.debiancn.org/info/';
-    var baseUrl = '/.theme/info/';
+    var baseUrl = '/info/';
     // search result
     var $result = $('#searchForm .searchResult');
     var ajax = {
