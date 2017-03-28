@@ -10,20 +10,23 @@ function windowLoaded(){
     var $timer = null;
     // 
     var ajaxReady = false;
+    // base url
+//    var baseUrl = './info/';
+    var baseUrl = 'http://repo.debiancn.org/info/';
     // search result
     var $result = $('#searchForm .searchResult');
     var ajax = {
-	'codename':'./info/codename.json'
+	'codename': baseUrl + 'codename.json'
     };
     $.get( ajax.codename, ajaxFn );
     function ajaxFn( data ){
 	ajax.codename = data;
 	for( var i in data ){
 	    (function( i ){
-		ajax[i] = './info/' + i + '.json';
+		ajax[i] = baseUrl + i + '.json';
 		$.get( ajax[i], function( data ){
 		    ajax[i] = data;
-		    console.log( data , i);
+//		    console.log( data , i);
 		} );
 	    }( i ));
 	}
@@ -41,7 +44,7 @@ function windowLoaded(){
 		ajaxReady || ( ajaxReady = true );
 	    }
 	    // show search result 
-	    console.log( $search.val() );
+//	    console.log( $search.val() );
 	    $result.empty();
 	    if( $search.val() === "" ){
 		return ;

@@ -123,8 +123,9 @@ h1 span:hover {
     padding: 0;
     background-color: #fff;
     border-bottom: 3px solid #D24C72;
-    height: 100px;
+    max-height: 100px;
     overflow-y: auto;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2) ;
 }
 .searchResult li{
     list-style: none;
