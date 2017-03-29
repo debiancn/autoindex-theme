@@ -63,6 +63,8 @@ function windowLoaded(){
 //                      console.log( ajax[k].main[k1][k2].Package );
                         let reg = new RegExp( $search.val(), 'i' );
                         if( reg.test( ajax[k].main[k1][k2].Package ) ){
+                            var target_package = ajax[k].main[k1][k2];
+                            console.log(target_package);
                             $result.append( $('<li>'+ ajax[k].main[k1][k2].Package +'</li>') );
                         }
                     }
