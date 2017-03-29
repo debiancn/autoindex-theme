@@ -1,4 +1,12 @@
 $( window ).on( 'load', windowLoaded );
+
+// convenient tool to add .endsWith method to String
+if (typeof String.prototype.endsWith != 'function') {
+    String.prototype.endsWith = function(str) {
+        return this.slice(-str.length) == str;
+    };
+}
+
 function windowLoaded(){
     // search input 
     var $search = $('#search');
@@ -66,8 +74,13 @@ function windowLoaded(){
                             // Right here. We should implement things
                             // carefully here. WIP.
                             var pkg = ajax[k].main[k1][k2];
+                            pkg.Codename = k;
+                            // Ignore -dbgsym packages
+                            if (pkg.Package.endsWith('-dbgsym')) {
+                                continue;
+                            }
 //                          console.log(pkg);
-                            $result.append( $('<li><a href="/'+ pkg.Filename + '">' + pkg.Package + ':' + pkg.Architecture + '/' + pkg.Version + '</a></li>') );
+                            $result.append( $('<li><a href="/'+ pkg.Filename + '">' + pkg.Package + ':' + pkg.Architecture + '/' + pkg.Codename + '/' + pkg.Version + '</a></li>') );
                         }
                     }
                 }
