@@ -133,3 +133,16 @@ h1 span:hover {
     padding: 3px 5px;
     white-space: nowrap;
 }
+
+/* stripped list effect */
+.searchResult li:nth-child(odd) {
+    background-color: rgba(238, 238, 238, 0.7);
+}
+
+.searchResult li:nth-child(even) {
+    background-color: rgba(211, 83, 83, 0.45);
+}
+
+.searchResult li a:link {
+    color: #555;
+}
