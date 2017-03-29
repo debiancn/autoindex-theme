@@ -62,10 +62,12 @@ function windowLoaded(){
                     for( var k2 in ajax[k].main[k1] ){
 //                      console.log( ajax[k].main[k1][k2].Package );
                         let reg = new RegExp( $search.val(), 'i' );
-                        if( reg.test( ajax[k].main[k1][k2].Package ) ){
-                            var target_package = ajax[k].main[k1][k2];
-                            console.log(target_package);
-                            $result.append( $('<li>'+ ajax[k].main[k1][k2].Package +'</li>') );
+                        if( reg.test( ajax[k].main[k1][k2].Package ) ) {
+                            // Right here. We should implement things
+                            // carefully here. WIP.
+                            var pkg = ajax[k].main[k1][k2];
+//                          console.log(pkg);
+                            $result.append( $('<li><a href="/'+ pkg.Filename + '">' + pkg.Package + ':' + pkg.Architecture + '/' + pkg.Version + '</a></li>') );
                         }
                     }
                 }
