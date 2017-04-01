@@ -7,6 +7,53 @@ if (typeof String.prototype.endsWith != 'function') {
     };
 }
 
+// compatible implementation of string representation of a node
+var getDomString = (function() {
+    var DIV = document.createElement("div");
+
+    if ('outerHTML' in DIV) {
+        return function(node) {
+            return node.outerHTML;
+        };
+    };
+
+    return function(node) {
+        var div = DIV.cloneNode();
+        div.appendChild(node.cloneNode(true));
+        return div.innerHTML;
+    };
+})();
+
+// Modifying prototype to provide filesize conversion
+Object.defineProperty(Number.prototype,'fileSize',{value:function(a,b,c,d){
+    return (a=a?[1e3,'k','B']:[1024,'K','iB'],b=Math,c=b.log,
+    d=c(this)/c(a[0])|0,this/b.pow(a[0],d)).toFixed(2)
+    +' '+(d?(a[1]+'MGTPEZY')[--d]+a[2]:'Bytes');
+},writable:false,enumerable:false});
+
+// pop-up result window when clicked
+function popPackageDescription(pkg) {
+    var popNode = document.createElement("div");
+    var headerNode = document.createElement("h2");
+    headerNode.appendChild(document.createTextNode(pkg.Package));
+    popNode.appendChild(headerNode);
+    popNode.appendChild(document.createElement("hr"));
+    var bodyNode = document.createElement("table");
+// XXX: could be better here
+    console.log(pkg);
+    //bodyNode.append($('<tr><td>描述：</td><td>' + pkg.Description + '</td></tr>')[0]); // too lang
+    bodyNode.append($('<tr><td>架构：</td><td>' + pkg.Architecture + '</td></tr>')[0]);
+    bodyNode.append($('<tr><td>发行版：</td><td>' + pkg.Codename + '</td></tr>')[0]);
+    bodyNode.append($('<tr><td>版本：</td><td>' + pkg.Version + '</td></tr>')[0]);
+    bodyNode.append($('<tr><td>大小：</td><td>' + (parseInt(pkg.Size)).fileSize() + '</td></tr>')[0]);
+    bodyNode.append($('<tr><td>SHA256：</td><td>' + pkg.SHA256 + '</td></tr>')[0]);
+    bodyNode.append($('<tr><td>链接：</td><td><a href="' + pkg.Filename + '">' + pkg.Filename + '</a></td></tr>')[0]);
+    popNode.appendChild(bodyNode);
+
+    $.fancybox.open(getDomString(popNode));
+    return false;
+}
+
 function windowLoaded(){
     // search input 
     var $search = $('#search');
@@ -80,7 +127,10 @@ function windowLoaded(){
                                 continue;
                             }
 //                          console.log(pkg);
-                            $result.append( $('<li><a href="/'+ pkg.Filename + '">' + pkg.Package + ':' + pkg.Architecture + '/' + pkg.Codename + '/' + pkg.Version + '</a></li>') );
+                            var search_result_node = $('<li>' + pkg.Package + ':' + pkg.Architecture + '/' + pkg.Codename + '/' + pkg.Version + '</li>');
+                            search_result_node.data('pkg', pkg);
+                            search_result_node.click(function(){popPackageDescription($(this).data('pkg'));});//popPackageDescription(pkg)};
+                            $result.append(search_result_node);
                         }
                     }
                 }
