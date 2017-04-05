@@ -149,8 +149,11 @@ function windowLoaded(){
         }, 150 );
     }
     
+    function hideFnReal(result_node) {
+        result_node.hide();
+    }
     function hideFn() {
-        $result.hide();
+        setTimeout(hideFnReal, 100, $result);
     }
 }
 
