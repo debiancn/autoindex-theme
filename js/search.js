@@ -19,11 +19,12 @@ function windowLoaded(){
     // 
     var ajaxReady = false;
     // base url
-//  var baseUrl = './info/';
 //  var baseUrl = 'http://repo.debiancn.org/info/';
-    var baseUrl = '/info/';
+    var baseUrl = '/.theme/info/';
     // search result
     var $result = $('#searchForm .searchResult');
+    // result list
+    var $list = {};
     var ajax = {
         'codename': baseUrl + 'codename.json'
     };
@@ -42,9 +43,11 @@ function windowLoaded(){
         }
     }
 
-    $search.on( 'keyup', inputFn ).on( 'parse', inputFn );
+    $search.on( 'keyup', inputFn ).on( 'parse', inputFn ).on( 'focus', inputFn );
+    $search.on( 'blur', hideFn );
 
     function inputFn( event ){
+	$result.show();
         clearTimeout( $timer );
         $timer = setTimeout(function(){
             for( var j in ajax ){
@@ -58,8 +61,9 @@ function windowLoaded(){
             // show search result 
 //          console.log( $search.val() );
             $result.empty();
+	    $list = {};
             if( $search.val() === "" ){
-                return ;
+                return 0;
             }
             for( var k in ajax ){
                 if( k === 'codename' ){
@@ -79,13 +83,21 @@ function windowLoaded(){
                             if (pkg.Package.endsWith('-dbgsym')) {
                                 continue;
                             }
+			    if ( $list[ pkg.Package ] ) {
+				continue;
+			    }
 //                          console.log(pkg);
                             $result.append( $('<li><a href="/'+ pkg.Filename + '">' + pkg.Package + ':' + pkg.Architecture + '/' + pkg.Codename + '/' + pkg.Version + '</a></li>') );
+			    $list[ pkg.Package ] = true;
                         }
                     }
                 }
             }
         }, 150 );
+    }
+
+    function hideFn(){
+	$result.hide();
     }
 }
 
