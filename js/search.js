@@ -71,6 +71,7 @@ function windowLoaded(){
     var baseUrl = '/info/';
     // search result
     var $result = $('#searchForm .searchResult');
+    var $list = {};
     var ajax = {
         'codename': baseUrl + 'codename.json'
     };
@@ -89,9 +90,11 @@ function windowLoaded(){
         }
     }
 
-    $search.on( 'keyup', inputFn ).on( 'parse', inputFn );
+    $search.on( 'keyup', inputFn ).on( 'parse', inputFn ).on( 'focus', inputFn );
+    $search.on( 'blur', hideFn );
 
     function inputFn( event ){
+        $result.show();
         clearTimeout( $timer );
         $timer = setTimeout(function(){
             for( var j in ajax ){
@@ -105,8 +108,9 @@ function windowLoaded(){
             // show search result 
 //          console.log( $search.val() );
             $result.empty();
+            $list = {};
             if( $search.val() === "" ){
-                return ;
+                return 0;
             }
             for( var k in ajax ){
                 if( k === 'codename' ){
@@ -126,16 +130,27 @@ function windowLoaded(){
                             if (pkg.Package.endsWith('-dbgsym')) {
                                 continue;
                             }
+                            // Do not show duplicated packages. Not really useful now so commented out.
+                            /*
+                            if ( $list[ pkg.Package ] ) {
+                                continue;
+                            }
+                            */
 //                          console.log(pkg);
                             var search_result_node = $('<li>' + pkg.Package + ':' + pkg.Architecture + '/' + pkg.Codename + '/' + pkg.Version + '</li>');
                             search_result_node.data('pkg', pkg);
                             search_result_node.click(function(){popPackageDescription($(this).data('pkg'));});//popPackageDescription(pkg)};
                             $result.append(search_result_node);
+                            $list[ pkg.Package ] = true;
                         }
                     }
                 }
             }
         }, 150 );
+    }
+    
+    function hideFn() {
+        $result.hide();
     }
 }
 
