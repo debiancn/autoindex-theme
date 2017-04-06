@@ -24,7 +24,8 @@ function windowLoaded(){
     // search result
     var $result = $('#searchForm .searchResult');
     // result list
-    var $list = {};
+    var $list = [];
+    var $listBool = false;
     var ajax = {
         'codename': baseUrl + 'codename.json'
     };
@@ -61,7 +62,7 @@ function windowLoaded(){
             // show search result 
 //          console.log( $search.val() );
             $result.empty();
-	    $list = {};
+	    $list = [];
             if( $search.val() === "" ){
                 return 0;
             }
@@ -83,12 +84,34 @@ function windowLoaded(){
                             if (pkg.Package.endsWith('-dbgsym')) {
                                 continue;
                             }
-			    if ( $list[ pkg.Package ] ) {
+			    $listBool = false;
+			    for( var i=0; i<$list.length; i++ ){
+				if( $list[i].Package === pkg.Package ){
+				    if(	$list[i].Architecture === pkg.Architecture &&
+					$list[i].Codename === pkg.Codename &&
+					$list[i].Version === pkg.Version
+				    ){
+					console.log( pkg.Package, pkg.Architecture, pkg.Codename, pkg.Version );
+					$listBool = true;
+					break;
+				    }
+				} 
+			    }
+			    if( $listBool ){
 				continue;
 			    }
 //                          console.log(pkg);
-                            $result.append( $('<li><a href="/'+ pkg.Filename + '">' + pkg.Package + ':' + pkg.Architecture + '/' + pkg.Codename + '/' + pkg.Version + '</a></li>') );
-			    $list[ pkg.Package ] = true;
+                            $result.append( $('<li><a href="/'+ pkg.Filename + '">' +
+					      pkg.Package + ':' +
+					      pkg.Architecture + '/' +
+					      pkg.Codename + '/' +
+					      pkg.Version + '</a></li>') );
+			    $list.push({
+				"Package":pkg.Package,
+				"Architecture":pkg.Architecture,
+				"Codename":pkg.Codename,
+				"Version":pkg.Version
+			    });
                         }
                     }
                 }
