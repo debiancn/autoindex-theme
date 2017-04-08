@@ -1,148 +1,37 @@
-body {
-    margin: 0;
-    min-width: 1300px;
+@charset "utf-8";
+/*reset*/
+body,button,input,select,textarea{font:100%/1 "Helvetica Neue",Helvetica,STHeiTi,"Microsoft YaHei" !important;}
+body,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,th,td,p,blockquote,pre,form,fieldset,legend,input,button,textarea,article,aside,footer,header,hgroup,nav,section,menu{margin:0; padding:0;-webkit-text-size-adjust:100%;}
+table{border-collapse:collapse;border-spacing:0;}
+em,i{font-style:normal;}
+li{list-style:none;}
+img{border:0;}
+input,img{vertical-align:middle;}
+article,aside,footer,header,hgroup,nav,section,menu{display:block;}
+a{text-decoration:none;}
+.clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden;}
+html,body{height:100%;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;color: #666666;background-color:#f3f5f7 !important;font-size: 16px !important;}
+a,input,textarea{-webkit-tap-highlight-color:rgba(0,0,0,0);tap-highlight-color:rgba(0,0,0,0);outline:none; -webkit-font-smoothing:antialiased}
+/*github iocn*/
+.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
 }
-header {
-    height: 60px;
-    width: 100%;
+@keyframes octocat-wave {
+    0%,100% {
+        transform: rotate(0)
+    }
+    20%,60% {
+        transform: rotate(-25deg)
+    }
+    40%,80% {
+        transform: rotate(10deg)
+    }
 }
-header a {
-    margin: 0 20px 0 250px;
-    padding-top: 16px;
-    text-decoration: none;
-    color: #000;
-    font-size: 2em;
-}
-form {
-    float:right;
-    margin-right:200px;
-    margin-top: 30px;
-}
-#search {
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 180px;
-    height: 25px;
-    color: #ccc;
-}
-#search-submit {
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    color: #555;
-}
-nav {
-    width: 100%;
-    height: 50px;
-    background-color: #ffffff;                       /* 导航条的背景颜色*/
-    border-bottom: 5px solid #D24C72;
-    /* box-shadow: 0 5px 10px #ccc, inset 0 2px 10px #eee; */
-    /*box-shadow: 0 5px 10px #ccc;*/
-}
-.logo-header {
-    height: 100%;
-    width: 170px;                                 /* logo条的长度 */
-    margin: 0 60px 0 0;                           /* 导航条的右边间隔长度 */
-    display: block;
-/*    background-color: #eee;                      /* logo条的背景颜色 */
-    float: left;
-    /* overflow: hidden; */
-}
-.images{
-    margin: -60px 0 0 120px;
-}
-nav ul {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    list-style-type: none;
-}
-nav ul li {
-    height: 100%;
-    float: left;
-}
-
-nav ul li a {
-    height: 100%;
-    width: 70px;                                 /* 各导航段的长度 */
-    display: block;
-    line-height: 50px;                            /* 调节此值确保文字上下居中 */
-    text-align: center;
-    text-decoration: none;
-    font-size: 1em;                              /* 导航文字大小 */
-    color: #555;                               /* 普通的导航文字颜色 */
-    margin: 0 2px;
-}
-
-nav ul li a:hover {
-    color: white;                                 /* 选中时的导航文字颜色 */
-    text-shadow: 1px 1px #000000;
-}
-.nav-last-link {
-    float: right;
-    margin-right: 195px;
-}
-#main{
-    height: 400px;
-    margin: 50px 150px 50px 150px;
-}
-h1 {
-    margin-bottom: 0;
-    padding-left: 20px;
-    font-size: 1.5em;
-    font-weight: 200;
-    border-bottom: 1px solid rgba(210,76,114,0.2);
-    color: #d24c72;
-}
-h1 span:hover {
-    color: white;
-    text-shadow: 1px 1px #000;
-
-}
-.content-left {
-    float: right;
-    margin: 0 140px 0 0;
-    width: 300px;
-}
-.content-left ul {
-    margin-top: 10px;
-    margin-left: 20px;
-    padding-left: 0;
-    list-style-type: none;
-    font-size: 1em;
-}
-.content-left ul li a {
-    text-decoration: none;
-    color: #555;
-}
-
-/* search result */
-.searchResult{
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    border-bottom: 3px solid #D24C72;
-    max-height: 100px;
-    overflow-y: auto;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2) ;
-}
-.searchResult li{
-    list-style: none;
-    text-indent: 0px;
-    padding: 3px 5px;
-    white-space: nowrap;
-}
-
-/* stripped list effect */
-.searchResult li:nth-child(odd) {
-    background-color: rgba(238, 238, 238, 0.7);
-}
-
-.searchResult li:nth-child(even) {
-    background-color: rgba(211, 83, 83, 0.45);
-}
-
-.searchResult li a:link {
-    color: #555;
+@media (max-width: 500px) {
+    .github-corner:hover .octo-arm {
+        animation:none
+    }
+    .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
 }
