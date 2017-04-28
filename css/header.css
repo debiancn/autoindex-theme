@@ -130,9 +130,24 @@ h1 span:hover {
     overflow-x: hidden;
     font-size: 0.9em;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
 }
 .searchResult li{
     list-style: none;
     text-indent: 0px;
     padding: 3px 5px;
+    white-space: nowrap;
+}
+
+/* stripped list effect */
+.searchResult li:nth-child(odd) {
+    background-color: rgba(238, 238, 238, 0.7);
+}
+
+.searchResult li:nth-child(even) {
+    background-color: rgba(211, 83, 83, 0.45);
+}
+
+.searchResult li a:link {
+    color: #555;
 }
