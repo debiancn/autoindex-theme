@@ -118,6 +118,7 @@ h1 span:hover {
 
 /* search result */
 .searchResult{
+    display: none;
     position: absolute;
     margin: 0;
     margin-top: 3px;
