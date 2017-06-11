@@ -42,12 +42,12 @@ function popPackageDescription(pkg) {
         // XXX: could be better here
 //      console.log(pkg);
         //bodyNode.append($('<tr><td>描述：</td><td>' + pkg.Description + '</td></tr>')[0]); // too lang
-        bodyNode.append($('<tr><td>架构：</td><td>' + pkg.Architecture + '</td></tr>')[0]);
-        bodyNode.append($('<tr><td>发行版：</td><td>' + pkg.Codename + '</td></tr>')[0]);
-        bodyNode.append($('<tr><td>版本：</td><td>' + pkg.Version + '</td></tr>')[0]);
-        bodyNode.append($('<tr><td>大小：</td><td>' + (parseInt(pkg.Size)).fileSize() + '</td></tr>')[0]);
-        bodyNode.append($('<tr><td>SHA256：</td><td>' + pkg.SHA256 + '</td></tr>')[0]);
-        bodyNode.append($('<tr><td>链接：</td><td><a href="' + pkg.Filename + '">' + pkg.Filename + '</a></td></tr>')[0]);
+        $(bodyNode).append($('<tr><td>架构：</td><td>' + pkg.Architecture + '</td></tr>')[0]);
+        $(bodyNode).append($('<tr><td>发行版：</td><td>' + pkg.Codename + '</td></tr>')[0]);
+        $(bodyNode).append($('<tr><td>版本：</td><td>' + pkg.Version + '</td></tr>')[0]);
+        $(bodyNode).append($('<tr><td>大小：</td><td>' + (parseInt(pkg.Size)).fileSize() + '</td></tr>')[0]);
+        $(bodyNode).append($('<tr><td>SHA256：</td><td>' + pkg.SHA256 + '</td></tr>')[0]);
+        $(bodyNode).append($('<tr><td>链接：</td><td><a href="' + pkg.Filename + '">' + pkg.Filename + '</a></td></tr>')[0]);
         popNode.appendChild(bodyNode);
 
         $.fancybox.open(getDomString(popNode));
